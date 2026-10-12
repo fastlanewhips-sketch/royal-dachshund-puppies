@@ -3,77 +3,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#071a35">
-<meta name="description" content="Meet the puppies at Royal Dachshund Puppies. Browse individual photo galleries and puppy details.">
-<title>Royal Dachshund Puppies | Our Puppies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Meet Prince at Royal Dachshund Puppies. Browse his photo gallery and learn more about him.">
+<title>Royal Dachshund Puppies | Meet Prince</title>
 
 <style>
 :root {
   --navy: #071a35;
-  --blue: #15365d;
-  --gold: #d6b45f;
+  --gold: #d6b35d;
   --cream: #faf7ef;
-  --ink: #26344a;
+  --text: #25334a;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   background: var(--cream);
-  color: var(--ink);
+  color: var(--text);
 }
 
 header {
   background: var(--navy);
-  color: white;
   text-align: center;
-  padding: 28px 15px;
-  border-bottom: 3px solid var(--gold);
+  padding: 34px 15px;
+  color: white;
 }
 
-.brand {
+header h1 {
   color: var(--gold);
-  font-family: Georgia, serif;
-  font-size: clamp(25px, 5vw, 37px);
-  margin: 0 0 9px;
+  font-size: 30px;
+  margin: 0 0 12px;
 }
 
-header p { margin: 0; line-height: 1.6; }
+header p {
+  margin: 0;
+  line-height: 1.6;
+}
 
 nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 22px;
-  padding: 15px 10px;
-  background: var(--blue);
+  background: #10294c;
+  padding: 15px;
+  text-align: center;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  margin: 0 12px;
   font-weight: bold;
-  font-size: 14px;
 }
 
-nav a:hover { color: var(--gold); }
-
 .hero {
-  background: linear-gradient(140deg, var(--navy), #20446b);
+  background: linear-gradient(135deg, #071a35, #173c68);
   color: white;
   text-align: center;
-  padding: 48px 18px;
+  padding: 55px 20px;
 }
 
 .hero h2 {
   color: var(--gold);
-  font-family: Georgia, serif;
-  font-size: clamp(28px, 5vw, 42px);
-  margin: 0 0 15px;
+  font-size: 32px;
+  margin-top: 0;
 }
 
 .hero p {
@@ -83,149 +75,105 @@ nav a:hover { color: var(--gold); }
 }
 
 .container {
-  max-width: 1120px;
-  padding: 38px 15px;
+  max-width: 1100px;
   margin: auto;
+  padding: 45px 16px;
 }
 
 .section-title {
   text-align: center;
-  font-family: Georgia, serif;
-  font-size: 30px;
   color: var(--navy);
-  margin: 0 0 12px;
-}
-
-.section-intro {
-  text-align: center;
-  line-height: 1.7;
-  margin: 0 auto 30px;
-  max-width: 650px;
-}
-
-.puppy-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
 .puppy-card {
-  min-width: 0;
   background: white;
-  border: 1px solid #e5d6ac;
-  border-radius: 15px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 7px 24px #071a3512;
+  box-shadow: 0 8px 30px #00000018;
+  border: 1px solid #ead9a8;
 }
 
-.gallery-main {
-  position: relative;
-  background: #f0eee8;
-}
-
-.main-photo {
-  display: block;
+.main-image {
   width: 100%;
-  height: 310px;
+  height: 400px;
   object-fit: contain;
+  background: #f0ede7;
+  display: block;
   cursor: zoom-in;
-}
-
-.photo-count {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  color: white;
-  background: #071a35d9;
-  border-radius: 20px;
-  padding: 7px 11px;
-  font-size: 12px;
-  pointer-events: none;
 }
 
 .thumbnails {
   display: flex;
-  gap: 9px;
+  gap: 10px;
   overflow-x: auto;
-  padding: 12px;
-  background: #faf8f1;
+  padding: 15px;
+  background: #f8f5ec;
 }
 
 .thumbnails img {
-  width: 76px;
-  height: 68px;
-  flex: 0 0 auto;
+  width: 90px;
+  height: 85px;
   object-fit: cover;
-  border: 2px solid transparent;
-  border-radius: 7px;
+  border-radius: 9px;
+  border: 3px solid transparent;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.thumbnails img.active { border-color: #b28a2e; }
+.thumbnails img.active {
+  border-color: var(--gold);
+}
 
-.details { padding: 21px; }
+.details {
+  padding: 28px;
+}
 
 .details h3 {
+  color: var(--navy);
+  font-size: 30px;
   margin: 0 0 15px;
-  color: var(--navy);
-  font-family: Georgia, serif;
-  font-size: 27px;
 }
 
-.puppy-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.info-item {
-  padding: 10px;
-  background: var(--cream);
-  border-radius: 8px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.info-item strong {
-  display: block;
-  color: var(--navy);
-  margin-bottom: 3px;
+.info {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 17px;
 }
 
 .price {
-  color: #98701b;
-  font-weight: bold;
+  color: #a67b20;
   font-size: 29px;
-  margin: 14px 0;
+  font-weight: bold;
+  margin: 20px 0;
 }
 
 .description {
-  line-height: 1.8;
-  font-size: 15px;
+  line-height: 1.9;
+  font-size: 16px;
 }
 
 .button {
   display: block;
-  width: 100%;
-  padding: 14px 12px;
-  margin-top: 12px;
-  border-radius: 8px;
   background: var(--navy);
   color: white;
-  text-decoration: none;
+  padding: 17px;
+  border-radius: 9px;
   text-align: center;
+  text-decoration: none;
   font-weight: bold;
+  margin-top: 20px;
 }
 
-.button:hover { background: var(--blue); }
+.button:hover {
+  background: #173c68;
+}
 
 .about {
-  max-width: 800px;
-  margin: auto;
   background: white;
-  border-radius: 12px;
-  padding: 24px;
+  border-radius: 15px;
+  padding: 25px;
   line-height: 1.9;
 }
 
@@ -233,16 +181,12 @@ nav a:hover { color: var(--gold); }
   background: var(--navy);
   color: white;
   text-align: center;
-  padding: 40px 18px;
-  border-top: 3px solid var(--gold);
+  padding: 45px 20px;
 }
 
 .contact-section h2 {
   color: var(--gold);
-  font-family: Georgia, serif;
 }
-
-.contact-section p { line-height: 1.8; }
 
 .contact-section a {
   color: var(--gold);
@@ -252,52 +196,50 @@ nav a:hover { color: var(--gold); }
 footer {
   background: #031024;
   color: #ddd;
-  padding: 22px 15px;
   text-align: center;
+  padding: 22px;
   font-size: 13px;
-  line-height: 1.8;
 }
 
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
+  background: rgba(0,0,0,.94);
   z-index: 1000;
-  background: #000e;
-  padding: 65px 15px 20px;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
-
-.lightbox.open { display: flex; }
 
 .lightbox img {
   max-width: 100%;
-  max-height: 82vh;
+  max-height: 85vh;
   object-fit: contain;
 }
 
 .close-lightbox {
   position: absolute;
-  top: 12px;
+  top: 15px;
   right: 15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
   width: 45px;
   height: 45px;
-  border: 0;
-  border-radius: 50%;
   font-size: 27px;
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
-  .puppy-grid { grid-template-columns: 1fr; }
-  .main-photo { height: 330px; }
-  .container { padding: 30px 13px; }
-}
-
-@media (max-width: 360px) {
-  .main-photo { height: 260px; }
-  .details { padding: 15px; }
+@media (max-width: 600px) {
+  header h1 { font-size: 25px; }
+  .hero h2 { font-size: 27px; }
+  .main-image { height: 300px; }
+  .details { padding: 20px; }
+  .thumbnails img {
+    width: 75px;
+    height: 70px;
+  }
 }
 </style>
 </head>
@@ -305,11 +247,11 @@ footer {
 <body>
 
 <header>
-  <h1 class="brand">👑 Royal Dachshund Puppies</h1>
+  <h1>👑 Royal Dachshund Puppies</h1>
   <p>Where Little Paws Meet Royal Love</p>
 </header>
 
-<nav aria-label="Main navigation">
+<nav>
   <a href="#home">Home</a>
   <a href="#puppies">Our Puppies</a>
   <a href="#about">About Us</a>
@@ -317,1030 +259,211 @@ footer {
 </nav>
 
 <section class="hero" id="home">
-  <h2>Meet Our Dachshund Puppies</h2>
+  <h2>Welcome to Royal Dachshund Puppies</h2>
   <p>
-    Browse each puppy's individual gallery, discover their profile,
-    and contact us for more information about availability.
+    Discover the joy of welcoming a Dachshund into
+    your family. Explore our puppy profiles, browse
+    their photos, and contact us to learn more.
   </p>
 </section>
 
 <main class="container" id="puppies">
-  <h2 class="section-title">Our Available Puppies</h2>
-  <p class="section-intro">
-    Explore each puppy's pictures and profile. Tap any thumbnail
-    to change the main photo, or tap the main photo to enlarge it.
-  </p>
 
-  <div class="puppy-grid">
+<h2 class="section-title">Meet Our Dachshund Puppies</h2>
 
-    <!-- PRINCE: FIVE PHOTOS -->
-    <article class="puppy-card" id="prince">
-      <div class="gallery-main">
-        <img class="main-photo"
-          src="kennel_lieblings_schatz_20261012_121905_694.jpg"
-          alt="Prince the Dachshund puppy, photo 1"
-          data-main-photo tabindex="0" role="button"
-          aria-label="Enlarge Prince's current photo">
-        <span class="photo-count">Photo 1 of 5</span>
-      </div>
+<!-- PRINCE'S PUPPY PROFILE -->
+<article class="puppy-card">
 
-      <div class="thumbnails" aria-label="Prince photo gallery">
-        <img class="active"
-          src="kennel_lieblings_schatz_20261012_121905_694.jpg"
-          alt="Prince photo 1" loading="lazy" data-thumb>
-        <img
-          src="kennel_lieblings_schatz_20261012_121906_854.jpg"
-          alt="Prince photo 2" loading="lazy" data-thumb>
-        <img
-          src="kennel_lieblings_schatz_20261012_121909_082.jpg"
-          alt="Prince photo 3" loading="lazy" data-thumb>
-        <img
-          src="kennel_lieblings_schatz_20261012_121909_708.jpg"
-          alt="Prince photo 4" loading="lazy" data-thumb>
-        <img
-          src="kennel_lieblings_schatz_20261012_121910_172.jpg"
-          alt="Prince photo 5" loading="lazy" data-thumb>
-      </div>
+  <img
+    id="princeMain"
+    class="main-image"
+    src="kennel_lieblings_schatz_20261012_121905_694.jpg"
+    alt="Prince the Dachshund puppy"
+    onclick="openLightbox(this.src)"
+  >
 
-      <div class="details">
-        <h3>👑 Prince</h3>
-        <div class="puppy-info">
-          <div class="info-item"><strong>Name</strong>Prince</div>
-          <div class="info-item"><strong>Gender</strong>Male</div>
-          <div class="info-item"><strong>Age</strong>10 weeks old</div>
-          <div class="info-item"><strong>Breed</strong>Dachshund</div>
-        </div>
-        <div class="price">$800</div>
-        <p class="description">
-          Meet Prince, an adorable Dachshund puppy looking for a
-          loving family to call his own. Browse all five photos to
-          get a closer look. Contact us to learn more about his
-          personality, care routine, and current availability.
-        </p>
-        <a class="button"
-          href="mailto:royaldachshundpuppies@yahoo.com?subject=Inquiry%20About%20Prince">
-          Inquire About Prince
-        </a>
-      </div>
-    </article>
+  <div class="thumbnails" id="princeGallery">
 
-    <!-- PRINCESS: THREE PHOTOS -->
-    <article class="puppy-card" id="princess">
-      <div class="gallery-main">
-        <img class="main-photo"
-          src="winstonandhoney_minidachshunds_20261012_121808_847.jpg"
-          alt="Princess the Dachshund puppy, photo 1"
-          data-main-photo tabindex="0" role="button"
-          aria-label="Enlarge Princess's current photo">
-        <span class="photo-count">Photo 1 of 3</span>
-      </div>
+    <img
+      class="active"
+      src="kennel_lieblings_schatz_20261012_121905_694.jpg"
+      alt="Prince photo one"
+      onclick="changePrincePhoto(this)"
+    >
 
-      <div class="thumbnails" aria-label="Princess photo gallery">
-        <img class="active"
-          src="winstonandhoney_minidachshunds_20261012_121808_847.jpg"
-          alt="Princess photo 1" loading="lazy" data-thumb>
-        <img
-          src="winstonandhoney_minidachshunds_20261012_121810_127.jpg"
-          alt="Princess photo 2" loading="lazy" data-thumb>
-        <img
-          src="winstonandhoney_minidachshunds_20261012_121813_266.jpg"
-          alt="Princess photo 3" loading="lazy" data-thumb>
-      </div>
+    <img
+      src="kennel_lieblings_schatz_20261012_121906_854.jpg"
+      alt="Prince photo two"
+      onclick="changePrincePhoto(this)"
+    >
 
-      <div class="details">
-        <h3>💕 Princess</h3>
-        <div class="puppy-info">
-          <div class="info-item"><strong>Name</strong>Princess</div>
-          <div class="info-item"><strong>Gender</strong>Female</div>
-          <div class="info-item"><strong>Age</strong>10 weeks old</div>
-          <div class="info-item"><strong>Breed</strong>Dachshund</div>
-        </div>
-        <div class="price">$800</div>
-        <p class="description">
-          Princess is a precious Dachshund girl who deserves a home
-          filled with love, care, and attention. If you're ready to
-          welcome a new furry companion, contact us to learn more
-          about her and her current availability.
-        </p>
-        <a class="button"
-          href="mailto:royaldachshundpuppies@yahoo.com?subject=Inquiry%20About%20Princess">
-          Inquire About Princess
-        </a>
-      </div>
-    </article>
+    <img
+      src="kennel_lieblings_schatz_20261012_121909_082.jpg"
+      alt="Prince photo three"
+      onclick="changePrincePhoto(this)"
+    >
 
-    <!-- DUKE: TWO PHOTOS -->
-    <article class="puppy-card" id="duke">
-      <div class="gallery-main">
-        <img class="main-photo"
-          src="dachshundsimba__20261012_121701_168.jpg"
-          alt="Duke the Dachshund puppy, photo 1"
-          data-main-photo tabindex="0" role="button"
-          aria-label="Enlarge Duke's current photo">
-        <span class="photo-count">Photo 1 of 2</span>
-      </div>
+    <img
+      src="kennel_lieblings_schatz_20261012_121909_708.jpg"
+      alt="Prince photo four"
+      onclick="changePrincePhoto(this)"
+    >
 
-      <div class="thumbnails" aria-label="Duke photo gallery">
-        <img class="active"
-          src="dachshundsimba__20261012_121701_168.jpg"
-          alt="Duke photo 1" loading="lazy" data-thumb>
-        <img
-          src="dachshundsimba__20261012_121701_685.jpg"
-          alt="Duke photo 2" loading="lazy" data-thumb>
-      </div>
-
-      <div class="details">
-        <h3>🐶 Duke</h3>
-        <div class="puppy-info">
-          <div class="info-item"><strong>Name</strong>Duke</div>
-          <div class="info-item"><strong>Gender</strong>Male</div>
-          <div class="info-item"><strong>Age</strong>10 weeks old</div>
-          <div class="info-item"><strong>Breed</strong>Dachshund</div>
-        </div>
-        <div class="price">$800</div>
-        <p class="description">
-          Duke is a handsome little Dachshund ready to meet his
-          future family. Explore his photos and contact us to ask
-          about his personality, care needs, and availability.
-        </p>
-        <a class="button"
-          href="mailto:royaldachshundpuppies@yahoo.com?subject=Inquiry%20About%20Duke">
-          Inquire About Duke
-        </a>
-      </div>
-    </article>
-
-    <!-- BELLA: THREE PHOTOS -->
-    <article class="puppy-card" id="bella">
-      <div class="gallery-main">
-        <img class="main-photo"
-          src="ghost_the_sausage_20261012_121602_049.jpg"
-          alt="Bella the Dachshund puppy, photo 1"
-          data-main-photo tabindex="0" role="button"
-          aria-label="Enlarge Bella's current photo">
-        <span class="photo-count">Photo 1 of 3</span>
-      </div>
-
-      <div class="thumbnails" aria-label="Bella photo gallery">
-        <img class="active"
-          src="ghost_the_sausage_20261012_121602_049.jpg"
-          alt="Bella photo 1" loading="lazy" data-thumb>
-        <img
-          src="ghost_the_sausage_20261012_121602_519.jpg"
-          alt="Bella photo 2" loading="lazy" data-thumb>
-        <img
-          src="ghost_the_sausage_20261012_121603_017.jpg"
-          alt="Bella photo 3" loading="lazy" data-thumb>
-      </div>
-
-      <div class="details">
-        <h3>🌸 Bella</h3>
-        <div class="puppy-info">
-          <div class="info-item"><strong>Name</strong>Bella</div>
-          <div class="info-item"><strong>Gender</strong>Female</div>
-          <div class="info-item"><strong>Age</strong>10 weeks old</div>
-          <div class="info-item"><strong>Breed</strong>Dachshund</div>
-        </div>
-        <div class="price">$800</div>
-        <p class="description">
-          Bella is a lovely Dachshund puppy searching for the right
-          family to call her own. She's ready for a new chapter
-          filled with patience, affection, and the special moments
-          that make puppy ownership rewarding.
-        </p>
-        <a class="button"
-          href="mailto:royaldachshundpuppies@yahoo.com?subject=Inquiry%20About%20Bella">
-          Inquire About Bella
-        </a>
-      </div>
-    </article>
-
-    <!-- KING: TWO PHOTOS -->
-    <article class="puppy-card" id="king">
-      <div class="gallery-main">
-        <img class="main-photo"
-          src="winstonandhoney_minidachshunds_20261012_121506_000.jpg"
-          alt="King the Dachshund puppy, photo 1"
-          data-main-photo tabindex="0" role="button"
-          aria-label="Enlarge King's current photo">
-        <span class="photo-count">Photo 1 of 2</span>
-      </div>
-
-      <div class="thumbnails" aria-label="King photo gallery">
-        <img class="active"
-          src="winstonandhoney_minidachshunds_20261012_121506_000.jpg"
-          alt="King photo 1" loading="lazy" data-thumb>
-        <img
-          src="winstonandhoney_minidachshunds_20261012_121508_535.jpg"
-          alt="King photo 2" loading="lazy" data-thumb>
-      </div>
-
-      <div class="details">
-        <h3>✨ King</h3>
-        <div class="puppy-info">
-          <div class="info-item"><strong>Name</strong>King</div>
-          <div class="info-item"><strong>Gender</strong>Male</div>
-          <div class="info-item"><strong>Age</strong>10 weeks old</div>
-          <div class="info-item"><strong>Breed</strong>Dachshund</div>
-        </div>
-        <div class="price">$800</div>
-        <p class="description">
-          King is a charming Dachshund puppy looking for a caring
-          home. Contact us to ask about his temperament, veterinary
-          records, daily care, and current availability.
-        </p>
-        <a class="button"
-          href="mailto:royaldachshundpuppies@yahoo.com?subject=Inquiry%20About%20King">
-          Inquire About King
-        </a>
-      </div>
-    </article>
+    <img
+      src="kennel_lieblings_schatz_20261012_121910_172.jpg"
+      alt="Prince photo five"
+      onclick="changePrincePhoto(this)"
+    >
 
   </div>
+
+  <div class="details">
+
+    <h3>👑 Meet Prince</h3>
+
+    <div class="info">
+      <strong>Name:</strong> Prince
+    </div>
+
+    <div class="info">
+      <strong>Gender:</strong> Male
+    </div>
+
+    <div class="info">
+      <strong>Age:</strong> 10 Weeks Old
+    </div>
+
+    <div class="info">
+      <strong>Breed:</strong> Dachshund
+    </div>
+
+    <div class="price">$800</div>
+
+    <p class="description">
+      Meet Prince, an adorable Dachshund puppy
+      looking for a loving family to call his own.
+      With his charming little face and delightful
+      puppy appeal, Prince could be a wonderful
+      addition to the right home.
+    </p>
+
+    <p class="description">
+      Browse all five of Prince's pictures above
+      to get a closer look at this little gentleman.
+      Contact us to learn more about his personality,
+      care routine, and current availability.
+    </p>
+
+    <a
+      class="button"
+      href="mailto:royaldachshundpuppies@yahoo.com?subject=Inquiry%20About%20Prince"
+    >
+      ✉️ Inquire About Prince
+    </a>
+
+    <a
+      class="button"
+      href="tel:+19375185268"
+    >
+      📞 Call Us
+    </a>
+
+  </div>
+</article>
 </main>
 
 <section class="container" id="about">
   <h2 class="section-title">About Royal Dachshund Puppies</h2>
+
   <div class="about">
     <p>
-      Explore our puppy profiles and photo galleries to learn more
-      about each Dachshund.
+      Welcome to Royal Dachshund Puppies.
+      We believe every puppy deserves a caring
+      family and a home filled with love.
     </p>
+
     <p>
-      Bringing home a puppy is a long-term commitment. Please ask
-      about health records, veterinary care, temperament, and
-      responsible puppy ownership before making a decision.
+      Our website allows you to explore individual
+      puppy profiles, view multiple photographs,
+      and contact us directly with questions.
     </p>
   </div>
 </section>
 
 <section class="contact-section" id="contact">
-  <h2>Contact Us</h2>
-  <p>Have a question about one of our puppies?</p>
+  <h2>Contact Royal Dachshund Puppies</h2>
+
+  <p>Have questions about Prince or our puppies?</p>
+
   <p>
     Email:
     <a href="mailto:royaldachshundpuppies@yahoo.com">
       royaldachshundpuppies@yahoo.com
     </a>
   </p>
+
   <p>
     Phone:
-    <a href="tel:+19375185268">+1 (937) 518-5268</a>
+    <a href="tel:+19375185268">
+      +1 (937) 518-5268
+    </a>
   </p>
 </section>
 
 <footer>
-  © 2026 Royal Dachshund Puppies. All rights reserved.
+  © 2026 Royal Dachshund Puppies.
+  All Rights Reserved.
 </footer>
 
-<div class="lightbox" id="lightbox"
-     role="dialog" aria-modal="true" aria-label="Puppy photo viewer">
-  <button class="close-lightbox" id="closeLightbox"
-          aria-label="Close photo viewer">×</button>
-  <img id="lightboxImage" alt="Enlarged puppy photograph">
+<!-- FULLSCREEN PHOTO VIEWER -->
+<div
+  class="lightbox"
+  id="lightbox"
+  onclick="closeLightbox()"
+>
+  <button
+    class="close-lightbox"
+    aria-label="Close photo"
+    onclick="closeLightbox()"
+  >×</button>
+
+  <img id="lightboxImage" alt="Enlarged puppy photo">
 </div>
 
 <script>
-document.querySelectorAll(".puppy-card").forEach(card => {
-  const main = card.querySelector("[data-main-photo]");
-  const thumbnails = card.querySelectorAll("[data-thumb]");
-  const counter = card.querySelector(".photo-count");
+function changePrincePhoto(thumbnail) {
+  const main = document.getElementById("princeMain");
+  main.src = thumbnail.src;
 
-  thumbnails.forEach((thumb, index) => {
-    thumb.addEventListener("click", () => {
-      main.src = thumb.src;
-      main.alt = thumb.alt;
+  const thumbnails = document.querySelectorAll(
+    "#princeGallery img"
+  );
 
-      thumbnails.forEach(item => item.classList.remove("active"));
-      thumb.classList.add("active");
-
-      counter.textContent =
-        `Photo ${index + 1} of ${thumbnails.length}`;
-    });
+  thumbnails.forEach(image => {
+    image.classList.remove("active");
   });
 
-  main.addEventListener("click", () => {
-    showLightbox(main.src, main.alt);
-  });
+  thumbnail.classList.add("active");
+}
 
-  main.addEventListener("keydown", event => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      showLightbox(main.src, main.alt);
-    }
-  });
-});
+function openLightbox(src) {
+  const lightbox = document.getElementById("lightbox");
+  const image = document.getElementById("lightboxImage");
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-
-function showLightbox(src, alt) {
-  lightboxImage.src = src;
-  lightboxImage.alt = alt;
-  lightbox.classList.add("open");
-  document.getElementById("closeLightbox").focus();
+  image.src = src;
+  lightbox.style.display = "flex";
 }
 
 function closeLightbox() {
-  lightbox.classList.remove("open");
+  document.getElementById("lightbox").style.display = "none";
 }
-
-document.getElementById("closeLightbox")
-  .addEventListener("click", closeLightbox);
-
-lightbox.addEventListener("click", event => {
-  if (event.target === lightbox) closeLightbox();
-});
 
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeLightbox();
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
 });
 </script>
 
-</body>
-</html>
-rgin-bottom: 13px;
-    }
-
-    .meta-chip {
-      background: #f5f1e8;
-      border-radius: 5px;
-      color: #5f523b;
-      padding: 5px 8px;
-      font-size: 10px;
-    }
-
-    .puppy-description {
-      color: #555e6b;
-      font-size: 12px;
-      line-height: 1.8;
-      margin-bottom: 17px;
-      overflow-wrap: anywhere;
-    }
-
-    .puppy-card .btn {
-      width: 100%;
-      min-height: 43px;
-      font-size: 12px;
-    }
-
-    .no-results {
-      display: none;
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 40px 15px;
-      color: var(--muted);
-    }
-
-    .about {
-      background: white;
-      border-block: 1px solid var(--border);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .about-art {
-      min-height: 320px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 28px;
-      background: var(--navy);
-      border-radius: 12px;
-      border: 5px solid #f0e5ce;
-      outline: 1px solid var(--gold);
-    }
-
-    .about-art .crown {
-      font-size: 35px;
-      margin-bottom: 9px;
-    }
-
-    .about-art h3 {
-      color: var(--gold-light);
-      font-size: 27px;
-    }
-
-    .about-art p {
-      margin-top: 12px;
-      color: #d8deea;
-      font-size: 13px;
-    }
-
-    .about-copy h2 {
-      color: var(--navy);
-      font-size: clamp(29px, 4vw, 37px);
-      margin-bottom: 15px;
-    }
-
-    .about-copy > p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 17px;
-    }
-
-    .about-list {
-      list-style: none;
-      display: grid;
-      gap: 11px;
-      margin: 20px 0 24px;
-    }
-
-    .about-list li {
-      display: flex;
-      gap: 10px;
-      font-size: 13px;
-      align-items: flex-start;
-    }
-
-    .about-list li span {
-      color: #9a742f;
-      font-weight: bold;
-    }
-
-    .contact {
-      background: linear-gradient(135deg, var(--navy), #203451);
-      color: white;
-      padding: 65px 0;
-    }
-
-    .contact-inner {
-      max-width: 700px;
-      text-align: center;
-      margin: auto;
-    }
-
-    .contact h2 {
-      color: white;
-      font-size: clamp(30px, 4vw, 42px);
-      margin-bottom: 15px;
-    }
-
-    .contact p {
-      color: #d4dce8;
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
-
-    .contact-details {
-      display: grid;
-      gap: 12px;
-      margin: 25px auto;
-      max-width: 470px;
-    }
-
-    .contact-item {
-      border: 1px solid rgba(217,181,104,.35);
-      border-radius: 8px;
-      padding: 13px;
-      overflow-wrap: anywhere;
-      color: var(--gold-light);
-      font-size: 13px;
-    }
-
-    .contact-item strong {
-      display: block;
-      color: white;
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 3px;
-    }
-
-    .contact-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    footer {
-      background: #0b1322;
-      color: #b8c0ce;
-      padding: 26px 0;
-      text-align: center;
-      font-size: 11px;
-    }
-
-    footer .footer-brand {
-      font-family: Georgia, serif;
-      color: var(--gold-light);
-      font-size: 17px;
-      margin-bottom: 7px;
-    }
-
-    footer p + p {
-      margin-top: 6px;
-    }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background: rgba(5,10,20,.93);
-      padding: 20px;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-width: 100%;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 6px;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 15px;
-      right: 18px;
-      width: 44px;
-      height: 44px;
-      border: 1px solid #ffffff55;
-      border-radius: 50%;
-      background: #17243a;
-      color: white;
-      font-size: 25px;
-    }
-
-    .back-top {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--gold-light);
-    }
-
-    @media (max-width: 850px) {
-      .hero {
-        padding: 48px 0 53px;
-      }
-
-      .hero-grid {
-        gap: 24px;
-      }
-
-      .hero-frame-inner {
-        min-height: 260px;
-      }
-
-      .puppy-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .puppy-photo {
-        height: 220px;
-      }
-
-      .about-grid {
-        gap: 28px;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: calc(100% - 28px);
-      }
-
-      .top-strip {
-        font-size: 9px;
-        letter-spacing: .8px;
-        padding: 7px 5px;
-      }
-
-      .navbar {
-        min-height: 67px;
-        gap: 8px;
-      }
-
-      .brand {
-        gap: 7px;
-      }
-
-      .brand-emblem {
-        width: 36px;
-        height: 36px;
-        flex-basis: 36px;
-        font-size: 20px;
-      }
-
-      .brand-name {
-        font-size: 14px;
-      }
-
-      .brand-subtitle {
-        font-size: 8px;
-        letter-spacing: 1.1px;
-      }
-
-      .nav-links {
-        gap: 0;
-      }
-
-      .nav-links a:not(.nav-cta) {
-        display: none;
-      }
-
-      .nav-cta {
-        padding: 9px 10px;
-        font-size: 11px;
-      }
-
-      .hero {
-        padding: 37px 0 38px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 27px;
-      }
-
-      .hero-copy {
-        font-size: 13px;
-        margin-bottom: 20px;
-      }
-
-      h1 {
-        font-size: 39px;
-        margin-bottom: 14px;
-      }
-
-      .hero-actions .btn {
-        flex: 1;
-        padding: 11px 10px;
-        font-size: 12px;
-      }
-
-      .hero-visual {
-        max-width: 330px;
-        justify-self: center;
-      }
-
-      .hero-frame-inner {
-        min-height: 225px;
-        padding: 20px;
-      }
-
-      .hero-dog {
-        font-size: 82px;
-      }
-
-      .hero-visual-title {
-        font-size: 20px;
-      }
-
-      .trust-row {
-        margin-top: 25px;
-        gap: 8px;
-      }
-
-      .trust-item {
-        padding-left: 8px;
-      }
-
-      .trust-item strong {
-        font-size: 13px;
-      }
-
-      .trust-item span {
-        font-size: 9px;
-      }
-
-      .section {
-        padding: 43px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 23px;
-      }
-
-      .section-heading h2 {
-        font-size: 29px;
-      }
-
-      .section-heading p {
-        font-size: 12px;
-      }
-
-      .feature-grid {
-        gap: 9px;
-      }
-
-      .feature-icon {
-        font-size: 21px;
-      }
-
-      .feature h3 {
-        font-size: 12px;
-      }
-
-      .feature p {
-        font-size: 10px;
-        line-height: 1.5;
-      }
-
-      .catalog-controls {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        margin-bottom: 17px;
-      }
-
-      .search-box {
-        max-width: none;
-        min-height: 44px;
-        font-size: 13px;
-      }
-
-      .results-count {
-        white-space: normal;
-        font-size: 11px;
-      }
-
-      .puppy-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .puppy-card {
-        border-radius: 9px;
-      }
-
-      .puppy-photo {
-        height: 155px;
-      }
-
-      .photo-label {
-        top: 7px;
-        left: 7px;
-        padding: 4px 6px;
-        font-size: 8px;
-      }
-
-      .puppy-content {
-        padding: 11px;
-      }
-
-      .puppy-title-row {
-        flex-direction: column;
-        gap: 3px;
-        margin-bottom: 9px;
-      }
-
-      .puppy-title {
-        font-size: 17px;
-      }
-
-      .puppy-subtitle {
-        font-size: 10px;
-      }
-
-      .price {
-        font-size: 16px;
-      }
-
-      .puppy-meta {
-        gap: 5px;
-        margin-bottom: 9px;
-      }
-
-      .meta-chip {
-        padding: 4px 6px;
-        font-size: 9px;
-      }
-
-      .puppy-description {
-        font-size: 11px;
-        line-height: 1.7;
-        margin-bottom: 12px;
-      }
-
-      .puppy-card .btn {
-        min-height: 39px;
-        padding: 9px 5px;
-        font-size: 10px;
-        gap: 4px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .about-art {
-        min-height: 220px;
-      }
-
-      .about-art h3 {
-        font-size: 24px;
-      }
-
-      .about-copy h2 {
-        font-size: 29px;
-      }
-
-      .about-copy > p {
-        font-size: 13px;
-      }
-
-      .about-list li {
-        font-size: 12px;
-      }
-
-      .contact {
-        padding: 45px 0;
-      }
-
-      .contact h2 {
-        font-size: 31px;
-      }
-
-      .contact p {
-        font-size: 12px;
-      }
-
-      .contact-item {
-        font-size: 12px;
-      }
-
-      .contact-actions .btn {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 350px) {
-      .container {
-        width: calc(100% - 20px);
-      }
-
-      .brand-name {
-        font-size: 12px;
-      }
-
-      .brand-subtitle {
-        font-size: 7px;
-      }
-
-      .nav-cta {
-        padding: 8px;
-        font-size: 10px;
-      }
-
-      .puppy-grid {
-        gap: 8px;
-      }
-
-      .puppy-content {
-        padding: 9px;
-      }
-
-      .puppy-photo {
-        height: 135px;
-      }
-
-      .puppy-title {
-        font-size: 15px;
-      }
-
-      .puppy-description {
-        font-size: 10px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="top-strip">
-    ROYAL DACHSHUND PUPPIES &nbsp; | &nbsp; YOUR NEXT COMPANION STARTS HERE
-  </div>
-
-  <header>
-    <div class="container navbar">
-      <a class="brand" href="#home" aria-label="Royal Dachshund Puppies home">
-        <div class="brand-emblem">♛</div>
-        <div>
-          <div class="brand-name">Royal Dachshund</div>
-          <div class="brand-subtitle">Puppies & Companions</div>
-        </div>
-      </a>
-
-      <nav class="nav-links" ari85268">☎ Call Us</a>
-</div>
-</div>
-</section>
-</main>
-
-<footer>
-<strong>♛ Royal Dachshund Puppies</strong>
-<p>Discover your next four-legged companion.</p>
-<p>© <span id="year"></span> Royal Dachshund Puppies. All rights reserved.</p>
-<a href="#home">Back to top ↑</a>
-</footer>
-
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Puppy photo">
-<button id="close" aria-label="Close photo">×</button>
-<img id="largeImage" src="" alt="Puppy photograph">
-</div>
-
-<script>
-const puppies = [
-["Prince","Male","👑","the_hotdogs_cl_20261012_120906_278.jpg","Meet Prince, a charming little Dachshund with a lovable personality and a heart full of affection. 🐾 He’s ready to bring joy, companionship, and plenty of unforgettable moments to his future family."],
-["Bella","Female","🎀","the_hotdogs_cl_20261012_120908_312.jpg","Meet Bella, a precious little Dachshund with an adorable face and a sweet, charming appearance. 🐶 She’s looking for a loving family ready to welcome her with care, attention, and plenty of cuddles."],
-["Max","Male","🐾","the_hotdogs_cl_20261012_120909_969.jpg","Max is an adorable Dachshund puppy with a delightful personality and a curious little nature. ❤️ He’s ready to meet a responsible family that can provide a safe home, proper care, and a lifetime of companionship."],
-["Daisy","Female","🌸","the_hotdogs_cl_20261012_120914_937.jpg","Say hello to Daisy, a lovely little Dachshund who is ready to brighten someone's days. 💕 With her adorable appearance and playful puppy charm, she could become a wonderful companion for a family prepared for puppy life."],
-["Teddy","Male","🧸","","Meet Teddy, a lovable little Dachshund with a cute face and a personality waiting to blossom. 🐾 He deserves a family that will give him patience, affection, proper nutrition, and all the care he needs as he grows."],
-["Lucy","Female","💕","","Lucy is a sweet Dachshund puppy with an irresistible little face and plenty of puppy charm. 🐶 She’s looking for a caring home where she can enjoy companionship, gentle training, and a loving family by her side."],
-["Charlie","Male","💙","","Charlie is a charming little Dachshund who is ready to start a new chapter with his future family. 🐾 He’ll need plenty of love, positive training, and a comfortable home where he can grow into a happy and well-cared-for companion."],
-["Molly","Female","🌷","","Meet Molly, a delightful Dachshund puppy who deserves a family ready to make her part of their everyday life. ❤️ She’s at a wonderful age to begin bonding with her owners through gentle handling, playtime, and consistent training."],
-["Duke","Male","👑","","Introducing Duke, a handsome Dachshund puppy with a big personality packed into a little body. 🐶 He’s looking for a responsible family that will give him the attention, safe environment, and consistent care every young puppy deserves."],
-["Luna","Female","🌙","","Luna is a precious little Dachshund with a sweet appearance and a whole lot of charm. 💗 She’s looking for a loving family prepared to provide proper nutrition, veterinary care, gentle socialization, and a safe place to call home."],
-["Oliver","Male","🐶","","Meet Oliver, an adorable Dachshund puppy ready to find a family that understands the joys and responsibilities of raising a young dog. 🐾 He deserves daily companionship, positive training, and plenty of opportunities to learn and grow."],
-["Rosie","Female","🌹","","Rosie is a lovely Dachshund puppy looking for a family to share life's little adventures with. 💕 Her future owners should be ready to provide a loving environment, regular health checks, and the time and patience needed to help a puppy thrive."],
-["Milo","Male","🤎","","Milo is a charming little Dachshund with an adorable look and a curious puppy spirit. 🐾 He’s looking for a family committed to giving him proper care, gentle guidance, safe playtime, and a lifetime of love and companionship."],
-["Sophie","Female","🌼","","Say hello to Sophie, a sweet Dachshund puppy who could become a treasured member of the right family. ❤️ She deserves a safe and comfortable home, proper nutrition, regular veterinary attention, and plenty of positive experiences as she grows."],
-["Bruno","Male","🐕","","Meet Bruno, a handsome little Dachshund who is ready to meet his prospective family. 🐶 With consistent routines, positive reinforcement, and responsible care, he can begin developing healthy habits and building a strong bond with his new owners."],
-["Chloe","Female","🎀","","Chloe is an adorable Dachshund puppy with a sweet little face and lots of growing ahead of her. 💕 She’s looking for a responsible family that can provide affection, age-appropriate training, regular veterinary care, and a secure environment."],
-["Cooper","Male","⭐","","Introducing Cooper, a delightful Dachshund puppy who deserves a home where he can feel safe, loved, and cared for. 🐾 His new family should be ready for daily companionship, patient house-training, and the commitment involved in raising a healthy puppy."],
-["Ruby","Female","❤️","","Meet Ruby, a precious Dachshund puppy looking for a family that will cherish her and help her grow. 🌸 She needs a loving environment, a consistent routine, positive socialization, and proper veterinary care to support her development."],
-["Archie","Male","🧡","","Archie is an adorable Dachshund puppy ready to be considered by a caring and responsible family. 🐾 His future owners should be prepared to offer proper nutrition, patient training, regular health checks, and lots of companionship throughout his life."],
-["Penny","Female","🌺","","Meet Penny, a lovely little Dachshund who could be the perfect companion for a family prepared to welcome a puppy. 💗 She deserves patient guidance, a secure home, proper care, and plenty of affection as she settles into her new surroundings."]
-];
-
-const grid = document.getElementById("puppiesGrid");
-const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-
-function render(query="") {
- const list=puppies.map((p,i)=>({...{p,i}})).filter(x=>x.p[0].toLowerCase().includes(query.trim().toLowerCase()));
- document.getElementById("count").textContent=`Showing ${list.length} puppy profile${list.length===1?"":"s"}`;
- document.getElementById("noResults").style.display=list.length?"none":"block";
- grid.innerHTML=list.map(({p,i})=>`
- <article class="card">
- <div class="photo">
- <span class="photo-label">Puppy Profile ${String(i+1).padStart(2,"0")}</span>
- ${p[3]?`<img src="${esc(p[3])}" alt="${esc(p[0])}, Dachshund puppy" loading="lazy">`:""}
- <div class="placeholder" ${p[3]?'style="display:none"':""}><span>🐶</span><small>Puppy photo coming soon</small></div>
- </div>
- <div class="card-content">
- <div class="title-row"><div><h3>${p[2]} Meet ${esc(p[0])}</h3><div class="subtitle">Royal Dachshund Puppy</div></div><div class="price">$800</div></div>
- <div class="meta"><span>${p[1]==="Male"?"♂":"♀"} ${p[1]}</span><span>10 weeks old</span></div>
- <p class="description">${esc(p[4])}</p>
- <a class="btn gold ask" href="#contact" data-name="${esc(p[0])}">Ask About ${esc(p[0])} →</a>
- </div></article>`).join("");
-
- grid.querySelectorAll(".photo img").forEach(img=>{
- const fail=()=>{img.classList.add("broken");img.nextElementSibling.style.display="flex";};
- img.addEventListener("error",fail);
- img.addEventListener("click",()=>{
- if(img.classList.contains("broken"))return;
- document.getElementById("largeImage").src=img.src;
- document.getElementById("lightbox").classList.add("open");
- document.body.style.overflow="hidden";
- });
- if(img.complete&&img.naturalWidth===0)fail();
- });
-
- grid.querySelectorAll(".ask").forEach(a=>a.addEventListener("click",e=>{
- e.preventDefault();
- const name=a.dataset.name;
- const subject=encodeURIComponent("Inquiry about "+name+" - Royal Dachshund Puppies");
- const body=encodeURIComponent("Hello Royal Dachshund Puppies,\n\nI would like to learn more about "+name+". Please let me know the current availability and provide further details.\n\nThank you.");
- location.href="mailto:royaldachshundpuppies@yahoo.com?subject="+subject+"&body="+body;
- }));
-}
-
-document.getElementById("search").addEventListener("input",e=>render(e.target.value));
-function closeViewer(){
- document.getElementById("lightbox").classList.remove("open");
- document.getElementById("largeImage").src="";
- document.body.style.overflow="";
-}
-document.getElementById("close").addEventListener("click",closeViewer);
-document.getElementById("lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")closeViewer();});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeViewer();});
-document.getElementById("year").textContent=new Date().getFullYear();
-render();
-</script>
 </body>
 </html>
