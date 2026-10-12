@@ -1,514 +1,371 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101a30">
-  <meta name="description" content="Meet the puppies at Royal Dachshund Puppies. View puppy profiles, learn about responsible puppy ownership, and contact us for availability.">
-  <title>Royal Dachshund Puppies | Find Your Companion</title>
-
-  <style>
-    :root {
-      --navy: #101a30;
-      --navy-light: #192743;
-      --gold: #d9b568;
-      --gold-light: #f3dfa8;
-      --cream: #faf8f2;
-      --white: #ffffff;
-      --text: #222b39;
-      --muted: #6b7280;
-      --border: #e9e3d7;
-      --shadow: 0 8px 28px rgba(16, 26, 48, .08);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 32px));
-      margin-inline: auto;
-    }
-
-    .top-strip {
-      background: var(--navy);
-      color: var(--gold-light);
-      text-align: center;
-      font-size: 11px;
-      letter-spacing: 1.1px;
-      padding: 8px 12px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(16, 26, 48, .98);
-      border-bottom: 1px solid rgba(217,181,104,.3);
-    }
-
-    .navbar {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .brand-emblem {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--gold-light);
-      font-size: 24px;
-    }
-
-    .brand-name {
-      color: white;
-      font-family: Georgia, serif;
-      font-size: 17px;
-      font-weight: bold;
-      line-height: 1.25;
-    }
-
-    .brand-subtitle {
-      color: var(--gold);
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      color: white;
-      font-size: 13px;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
-
-    .nav-cta {
-      background: var(--gold);
-      color: var(--navy) !important;
-      padding: 10px 15px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .hero {
-      background:
-        radial-gradient(ellipse at 80% 20%, rgba(217,181,104,.14), transparent 42%),
-        linear-gradient(135deg, #101a30, #1b2b49);
-      color: white;
-      padding: 65px 0 72px;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      align-items: center;
-      gap: 42px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--gold);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: clamp(36px, 5vw, 57px);
-      letter-spacing: -.8px;
-      margin-bottom: 20px;
-    }
-
-    h1 span {
-      color: var(--gold-light);
-    }
-
-    .hero-copy {
-      max-width: 480px;
-      color: #d8deea;
-      font-size: 15px;
-      margin-bottom: 27px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      min-height: 47px;
-      padding: 12px 19px;
-      border: 1px solid transparent;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: bold;
-      text-align: center;
-      transition: transform .2s, background .2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy);
-    }
-
-    .btn-outline {
-      border-color: rgba(255,255,255,.45);
-      color: white;
-    }
-
-    .hero-visual {
-      position: relative;
-      max-width: 440px;
-      width: 100%;
-      justify-self: end;
-    }
-
-    .hero-frame {
-      position: relative;
-      border: 1px solid rgba(217,181,104,.7);
-      padding: 9px;
-      border-radius: 170px 170px 16px 16px;
-      background: rgba(255,255,255,.04);
-    }
-
-    .hero-frame-inner {
-      min-height: 280px;
-      border-radius: 160px 160px 10px 10px;
-      background: linear-gradient(150deg, #253653, #111a2c);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 32px;
-    }
-
-    .hero-dog {
-      font-size: clamp(85px, 13vw, 135px);
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .hero-visual-title {
-      color: var(--gold-light);
-      font-family: Georgia, serif;
-      font-size: 23px;
-    }
-
-    .hero-visual-copy {
-      color: #d8deea;
-      font-size: 12px;
-      margin-top: 7px;
-    }
-
-    .trust-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 34px;
-      max-width: 460px;
-    }
-
-    .trust-item {
-      border-left: 2px solid var(--gold);
-      padding-left: 11px;
-    }
-
-    .trust-item strong {
-      display: block;
-      font-size: 15px;
-      color: white;
-    }
-
-    .trust-item span {
-      font-size: 10px;
-      color: #cbd2df;
-    }
-
-    .section {
-      padding: 67px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 630px;
-      margin: 0 auto 31px;
-    }
-
-    .section-heading .eyebrow {
-      margin-bottom: 9px;
-    }
-
-    .section-heading h2 {
-      color: var(--navy);
-      font-size: clamp(29px, 4vw, 39px);
-      margin-bottom: 12px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .features {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      border-top: 1px solid var(--border);
-      padding: 25px 0;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .feature {
-      text-align: center;
-      padding: 5px;
-    }
-
-    .feature-icon {
-      font-size: 25px;
-      margin-bottom: 5px;
-    }
-
-    .feature h3 {
-      color: var(--navy);
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
-
-    .feature p {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .catalog {
-      background: var(--cream);
-    }
-
-    .catalog-controls {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-    }
-
-    .search-box {
-      width: 100%;
-      max-width: 390px;
-      min-height: 46px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: white;
-      color: var(--text);
-      padding: 12px 14px;
-      outline: none;
-    }
-
-    .search-box:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(217,181,104,.15);
-    }
-
-    .results-count {
-      color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    .puppy-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .puppy-card {
-      min-width: 0;
-      overflow: hidden;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .puppy-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(16,26,48,.12);
-    }
-
-    .puppy-photo {
-      position: relative;
-      height: 245px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #e8dfcd, #f7f3eb);
-    }
-
-    .puppy-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: zoom-in;
-      transition: transform .35s;
-    }
-
-    .puppy-photo img:hover {
-      transform: scale(1.04);
-    }
-
-    .photo-placeholder {
-      display: none;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: var(--navy);
-      gap: 6px;
-    }
-
-    .photo-placeholder span {
-      font-size: 64px;
-    }
-
-    .photo-placeholder small {
-      color: #756a56;
-      font-size: 11px;
-    }
-
-    .puppy-photo img.broken {
-      display: none;
-    }
-
-    .puppy-photo img.broken + .photo-placeholder {
-      display: flex;
-    }
-
-    .photo-label {
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      z-index: 1;
-      padding: 5px 10px;
-      border-radius: 5px;
-      background: var(--navy);
-      color: var(--gold-light);
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-    }
-
-    .puppy-content {
-      padding: 19px;
-    }
-
-    .puppy-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .puppy-title {
-      font-size: 21px;
-      color: var(--navy);
-      overflow-wrap: anywhere;
-    }
-
-    .puppy-subtitle {
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 3px;
-    }
-
-    .price {
-      color: #8b682b;
-      font-size: 18px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .puppy-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 13px;
+/* =========================================
+   ROYAL DACHSHUND PUPPIES
+   MOBILE LAYOUT & ALIGNMENT CORRECTION
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+}
+
+main,
+header,
+footer,
+section,
+nav {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Correct main page containers */
+.container,
+.wrapper,
+.section,
+.section-inner,
+.content,
+.page-content {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Correct hero alignment */
+.hero,
+.hero-section,
+.hero-grid {
+  min-width: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-grid > *,
+.hero-content,
+.hero-visual {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hero h1,
+.hero h2,
+.hero p,
+.hero-content h1,
+.hero-content p {
+  overflow-wrap: anywhere;
+}
+
+/* Correct puppy gallery and cards */
+.puppy-grid,
+.puppies-grid,
+.puppy-gallery,
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  max-width: 100%;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.puppy-card,
+.puppy-item,
+.puppy-content,
+.puppy-photo {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.puppy-card {
+  width: 100%;
+  overflow: hidden;
+}
+
+.puppy-photo img,
+.puppy-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Prevent text from pushing cards wider */
+.puppy-card h2,
+.puppy-card h3,
+.puppy-card p,
+.puppy-description {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Correct dark-background text contrast */
+.hero,
+.hero-section {
+  color: #ffffff;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+.hero-section h1,
+.hero-section h2,
+.hero-section p {
+  color: #ffffff;
+}
+
+.hero h1 span,
+.hero .eyebrow,
+.hero-section .eyebrow {
+  color: #f3dfa8;
+}
+
+/* Mobile correction */
+@media screen and (max-width: 700px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .container,
+  .wrapper,
+  .section,
+  .section-inner,
+  .content,
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero,
+  .hero-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 36px 0;
+    text-align: center;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 26px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-grid > *,
+  .hero-content,
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1,
+  .hero-section h1 {
+    font-size: clamp(32px, 9vw, 43px);
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .hero p,
+  .hero-section p {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-visual {
+    justify-self: auto;
+  }
+
+  .puppy-grid,
+  .puppies-grid,
+  .puppy-gallery,
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .puppy-card,
+  .puppy-item {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .puppy-photo,
+  .puppy-card .puppy-photo {
+    width: 100%;
+    height: 165px;
+    overflow: hidden;
+  }
+
+  .puppy-photo img,
+  .puppy-card .puppy-photo img,
+  .puppy-card img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .puppy-content {
+    padding: 11px;
+  }
+
+  .puppy-title-row {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .puppy-card h2,
+  .puppy-card h3 {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+
+  .puppy-card p,
+  .puppy-description {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .puppy-card .btn,
+  .puppy-card a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 24px;
+  }
+
+  .about-grid > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .section-heading {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .catalog-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .search-box,
+  #puppySearch {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .contact-inner {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .contact-details,
+  .contact-actions {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Extra-small phones */
+@media screen and (max-width: 380px) {
+  .puppy-grid,
+  .puppies-grid,
+  .puppy-gallery,
+  .gallery-grid {
+    gap: 8px;
+  }
+
+  .puppy-photo,
+  .puppy-card .puppy-photo {
+    height: 135px;
+  }
+
+  .puppy-content {
+    padding: 9px;
+  }
+
+  .puppy-card h2,
+  .puppy-card h3 {
+    font-size: 15px;
+  }
+
+  .puppy-card p,
+  .puppy-description {
+    font-size: 10px;
+  }
+}
+rgin-bottom: 13px;
     }
 
     .meta-chip {
